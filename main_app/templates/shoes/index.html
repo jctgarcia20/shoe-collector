@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Shoe List</h1>
+
+{% for shoe in shoes %}
+  <div class="card">
+    <div class="card-content">
+      <span class="card-title">{{ shoe.name }}</span>
+      <p>Name: {{ shoe.name }}</p>
+      <p>Brand: {{ shoe.brand }}</p>
+      <p>Description: {{ shoe.description }}</p>
+      <p>Gender: {{ shoe.gender }}</p>
+      <p>Size: {{ shoe.age }}</p>
+      <p>Color: {{ shoe.color }}</p>
+      <p>Price: {{ shoe.price }}</p>
+    </div>
+  </div>
+{% endfor %}
+
+{% endblock %}
