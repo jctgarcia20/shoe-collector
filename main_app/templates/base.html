@@ -15,11 +15,12 @@
     <nav>
       <div class="nav-wrapper">
         <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;ShoeCollector</a></li>
+          <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;ShoeCollector</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/shoes">View All My Shoes</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'shoes_create' %}">Add a Shoe</a></li>
+          <li><a href="{% url 'index' %}">View All My Shoes</a></li>
       </div>
     </nav>
   </header>
