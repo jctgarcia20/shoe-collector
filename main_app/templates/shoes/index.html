@@ -5,16 +5,18 @@
 
 {% for shoe in shoes %}
   <div class="card">
-    <div class="card-content">
-      <span class="card-title">{{ shoe.name }}</span>
-      <p>Name: {{ shoe.name }}</p>
-      <p>Brand: {{ shoe.brand }}</p>
-      <p>Description: {{ shoe.description }}</p>
-      <p>Gender: {{ shoe.gender }}</p>
-      <p>Size: {{ shoe.age }}</p>
-      <p>Color: {{ shoe.color }}</p>
-      <p>Price: {{ shoe.price }}</p>
-    </div>
+    <a href="/shoes/{{ shoe.id }}">
+      <div class="card-content">
+        <span class="card-title">{{ shoe.name }}</span>
+        <p>Name: {{ shoe.name }}</p>
+        <p>Brand: {{ shoe.brand }}</p>
+        <p>Description: {{ shoe.description }}</p>
+        <p>Gender: {{ shoe.gender }}</p>
+        <p>Size: {{ shoe.size }}</p>
+        <p>Color: {{ shoe.color }}</p>
+        <p>Price: {{ shoe.price }}</p>
+      </div>
+    </a>
   </div>
 {% endfor %}
 
