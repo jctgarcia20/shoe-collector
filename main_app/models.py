@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date
 
 STATUS = (
     ('O', 'Own Shoe'),
@@ -20,12 +21,14 @@ class Shoe(models.Model):
   color = models.CharField(max_length=100)
   price = models.CharField(max_length=100)
 
-
   def __str__(self):
     return f'{self.name} ({self.id})'
 
   def get_absolute_url(self):
     return reverse('detail', kwargs={'shoe_id': self.id})
+
+  def own_status(self):
+    return self.bought_set.filter(date=date.today()).count() > 0
 
 class Bought(models.Model):
   date = models.DateField('Shoe Status Date')

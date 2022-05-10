@@ -28,6 +28,13 @@
       {{ bought_form.as_p }}
       <input type="submit" class="btn" value="Add to Collection">
     </form>
+    <br>
+    {% if shoe.own_status %}
+      <div class="card-panel teal-text center-align">{{shoe.name}} has a collection status</div>
+    {% else %}
+      <div class="card-panel red-text center-align">{{shoe.name}} has no collection status</div>
+    {% endif %}
+
     <table class="striped">
       <thead>
         <tr><th>Date</th><th>Shoe Status</th></tr>
