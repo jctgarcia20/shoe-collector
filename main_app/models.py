@@ -1,6 +1,12 @@
 from django.db import models
 from django.urls import reverse
 
+STATUS = (
+    ('O', 'Own Shoe'),
+    ('D', "Don't Own"),
+    ('P', 'Plan to Own')
+)
+
 # Create your models here.
 class Shoe(models.Model):
   # First define the attributes/fields
@@ -20,3 +26,28 @@ class Shoe(models.Model):
 
   def get_absolute_url(self):
     return reverse('detail', kwargs={'shoe_id': self.id})
+
+class Bought(models.Model):
+  date = models.DateField('Shoe Status Date')
+  status = models.CharField(
+    max_length=1,
+    # add the 'choices' field option
+    choices=STATUS,
+    # set the default value for status to be 'O'
+    default=STATUS[0][0]
+  )
+
+  # Create a shoe_id FK
+  shoe = models.ForeignKey(
+    Shoe, 
+    on_delete=models.CASCADE
+  )
+
+  def __str__(self):
+    # Nice method for obtaining the friendly value of a Field.choice
+    return f"{self.get_status_display()} on {self.date}"
+    # status used to be meal
+    # might cause error
+
+  class Meta:
+    ordering = ['-date']
