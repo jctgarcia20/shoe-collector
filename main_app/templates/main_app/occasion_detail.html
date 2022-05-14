@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Occasion Details</h1>
+
+<div class="row">
+  <div class="col s6 col-offset-3">
+    <div class="card">
+      <div class="card-content">
+        <span class="card-title">{{ occasion.name }}</span>
+        <p>Activity: {{ occasion.activity }}</p>
+      </div>
+      <div class="card-action">
+        <a href="{% url 'occasions_update' occasion.id %}">Edit</a>
+        <a href="{% url 'occasions_delete' occasion.id %}">Delete</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

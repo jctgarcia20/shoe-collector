@@ -9,6 +9,17 @@ STATUS = (
 )
 
 # Create your models here.
+class Occasion(models.Model):
+  name = models.CharField(max_length=50)
+  activity = models.CharField(max_length=100)
+
+  def __str__(self):
+    return self.name
+
+  def get_absolute_url(self):
+    return reverse('occasions_detail', kwargs={'pk': self.id})
+
+
 class Shoe(models.Model):
   # First define the attributes/fields
   name = models.CharField(max_length=100)
@@ -20,6 +31,7 @@ class Shoe(models.Model):
   size = models.IntegerField()
   color = models.CharField(max_length=100)
   price = models.CharField(max_length=100)
+  occasions = models.ManyToManyField(Occasion)
 
   def __str__(self):
     return f'{self.name} ({self.id})'

@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Occasion List</h1>
+
+{% for occasion in occasion_list %}
+  <a href="{% url 'occasions_detail' occasion.id %}">
+    <div class="card">
+        <div class="card-content">
+            <span class="card-title">{{ occasion.name }}</span>
+            <p>Activity: {{ occasion.activity }}</p>
+        </div>
+    </div>
+  </a>
+{% endfor %}
+
+{% endblock %}

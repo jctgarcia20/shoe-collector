@@ -34,8 +34,6 @@
     {% else %}
       <div class="card-panel red-text center-align">{{shoe.name}} has no status in your collection</div>
     {% endif %}
-    
-
     <table class="striped">
       <thead>
         <tr><th>Date</th><th>Shoe Status</th></tr>
@@ -49,6 +47,54 @@
         {% endfor %}
       </tbody>
     </table>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col s6">
+    <h3>{{ shoe.name }}'s Occasions</h3>
+    {% if shoe.occasions.count %}
+      {% for occasion in shoe.occasions.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              A <span style="activity: {{ occasion.activity }}">{{ occasion.activity }}</span> {{ occasion.name }}
+            </span>
+          </div>
+          <div class="card-action">
+            <form action="{% url 'unassoc_occasion' shoe.id occasion.id %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" class="btn">Remove</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>No Occasions :(</h5>
+    {% endif %}
+  </div>
+  <!-- Available occasions will come after this line -->
+  <div class="col s6">
+    <h3>Available Occasions</h3>
+    {% if occasions.count %}
+      {% for occasion in occasions.all %}
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title">
+              A <span style="activity: {{ occasion.activity }}">{{ occasion.activity }}</span> {{ occasion.name }}
+            </span>
+          </div>
+          <div class="card-action">
+            <form action="{% url 'assoc_occasion' shoe.id occasion.id %}" method="POST">
+              {% csrf_token %}
+              <button type="submit" class="btn">Add</button>
+            </form>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h5>{{shoe.name}} Already Has All Occasions Available</h5>
+    {% endif %}
   </div>
 </div>
 
