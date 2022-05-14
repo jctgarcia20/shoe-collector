@@ -1,7 +1,7 @@
 from django.forms import ModelForm
-from .models import Bought
+from .models import Wore
 
-class BoughtForm(ModelForm):
+class WoreForm(ModelForm):
   class Meta:
-    model = Bought
+    model = Wore
     fields = ['date', 'status']

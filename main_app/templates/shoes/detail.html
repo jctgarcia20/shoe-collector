@@ -23,27 +23,28 @@
     </div>
   </div>
   <div class="col s6">
-    <form action="{% url 'add_bought' shoe.id %}" method="POST">
+    <form action="{% url 'add_wore' shoe.id %}" method="POST">
       {% csrf_token %}
-      {{ bought_form.as_p }}
+      {{ wore_form.as_p }}
       <input type="submit" class="btn" value="Add to Collection">
     </form>
     <br>
-    {% if shoe.own_status %}
-      <div class="card-panel teal-text center-align">{{shoe.name}} has a collection status</div>
+    {% if shoe.wore_status %}
+      <div class="card-panel teal-text center-align">{{shoe.name}} status is up to date</div>
     {% else %}
-      <div class="card-panel red-text center-align">{{shoe.name}} has no collection status</div>
+      <div class="card-panel red-text center-align">{{shoe.name}} has no status in your collection</div>
     {% endif %}
+    
 
     <table class="striped">
       <thead>
         <tr><th>Date</th><th>Shoe Status</th></tr>
       </thead>
       <tbody>
-        {% for bought in shoe.bought_set.all %}
+        {% for wore in shoe.wore_set.all %}
           <tr>
-            <td>{{bought.date}}</td>
-            <td>{{bought.get_status_display}}</td>
+            <td>{{wore.date}}</td>
+            <td>{{wore.get_status_display}}</td>
           </tr>
         {% endfor %}
       </tbody>

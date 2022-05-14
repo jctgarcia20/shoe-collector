@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import Shoe, Bought
+from .models import Shoe, Wore
 
 # Register your models here
 admin.site.register(Shoe)
-admin.site.register(Bought)
+admin.site.register(Wore)

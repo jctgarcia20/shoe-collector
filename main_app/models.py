@@ -3,9 +3,9 @@ from django.urls import reverse
 from datetime import date
 
 STATUS = (
-    ('O', 'Own Shoe'),
-    ('D', "Don't Own"),
-    ('P', 'Plan to Own')
+    ('W', 'Wore Shoe'),
+    ('N', "Not Worn"),
+    ('P', 'Plan to wear'),
 )
 
 # Create your models here.
@@ -27,10 +27,10 @@ class Shoe(models.Model):
   def get_absolute_url(self):
     return reverse('detail', kwargs={'shoe_id': self.id})
 
-  def own_status(self):
-    return self.bought_set.filter(date=date.today()).count() > 0
+  def wore_status(self):
+    return self.wore_set.filter(date=date.today()).count() >= len(STATUS[0][0])
 
-class Bought(models.Model):
+class Wore(models.Model):
   date = models.DateField('Shoe Status Date')
   status = models.CharField(
     max_length=1,
