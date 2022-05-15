@@ -20,10 +20,15 @@
         </ul>
         <ul class="right">
           <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'occasions_create' %}">Add an Occasion</a></li>
-          <li><a href="{% url 'occasions_index' %}">View All Occasions</a></li>
-          <li><a href="{% url 'shoes_create' %}">Add a Shoe</a></li>
-          <li><a href="{% url 'index' %}">View All My Shoes</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="{% url 'occasions_create' %}">Add an Occasion</a></li>
+            <li><a href="{% url 'occasions_index' %}">View All Occasions</a></li>
+            <li><a href="{% url 'shoes_create' %}">Add a Shoe</a></li>
+            <li><a href="{% url 'index' %}">View All My Shoes</a></li>
+          {% else %}
+            <li><a href="{% url 'signup' %}">Sign Up</a></li>
+            <li><a href="{% url 'login' %}">Log In</a></li>
+          {% endif %}
       </div>
     </nav>
   </header>

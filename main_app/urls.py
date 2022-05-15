@@ -18,4 +18,5 @@ urlpatterns = [
   path('occasions/create/', views.OccasionCreate.as_view(), name='occasions_create'),
   path('occasions/<int:pk>/update/', views.OccasionUpdate.as_view(), name='occasions_update'),
   path('occasions/<int:pk>/delete/', views.OccasionDelete.as_view(), name='occasions_delete'),
+  path('accounts/signup/', views.signup, name='signup'),
 ]

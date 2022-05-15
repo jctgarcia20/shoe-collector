@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 from datetime import date
 
 STATUS = (
@@ -21,17 +22,16 @@ class Occasion(models.Model):
 
 
 class Shoe(models.Model):
-  # First define the attributes/fields
   name = models.CharField(max_length=100)
   brand = models.CharField(max_length=100)
-  # Django will create inputs for a form
-  # TextField will create a <textarea>
   description = models.TextField(max_length=250)
   gender = models.CharField(max_length=100)
   size = models.IntegerField()
   color = models.CharField(max_length=100)
   price = models.CharField(max_length=100)
+  # add a M:M assoc between shoes & occasions
   occasions = models.ManyToManyField(Occasion)
+  user = models.ForeignKey(User, on_delete=models.CASCADE)
 
   def __str__(self):
     return f'{self.name} ({self.id})'
