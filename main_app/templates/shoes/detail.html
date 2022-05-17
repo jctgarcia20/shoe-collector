@@ -30,14 +30,14 @@
       {% csrf_token %}
       <input type="file" name="photo-file">
       <br><br>
-      <input type="submit" class="btn" value="Upload Photo">
+      <input type="submit" class="btn grey" value="Upload Photo">
     </form>  
   </div>
   <div class="col s6">
     <form action="{% url 'add_wore' shoe.id %}" method="POST">
       {% csrf_token %}
       {{ wore_form.as_p }}
-      <input type="submit" class="btn" value="Add to Collection">
+      <input type="submit" class="btn btn grey" value="Add to Collection">
     </form>
     <br>
     {% if shoe.wore_status %}
@@ -77,7 +77,7 @@
           <div class="card-action">
             <form action="{% url 'unassoc_occasion' shoe.id occasion.id %}" method="POST">
               {% csrf_token %}
-              <button type="submit" class="btn">Remove</button>
+              <button type="submit" class="btn grey">Remove</button>
             </form>
           </div>
         </div>
@@ -102,7 +102,7 @@
           <div class="card-action">
             <form action="{% url 'assoc_occasion' shoe.id occasion.id %}" method="POST">
               {% csrf_token %}
-              <button type="submit" class="btn">Add</button>
+              <button type="submit" class="btn grey">Add</button>
             </form>
           </div>
         </div>
