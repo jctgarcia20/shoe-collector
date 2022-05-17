@@ -8,7 +8,73 @@ main {
   flex: 1 0 auto;
 }
 
+.logo{
+  font-size: 32px;
+  text-align: center !important;
+}
+
+.nav-wrapper {
+  background-color: white;
+}
+
+nav ul a {
+  color: black;
+}
+
+#slogan {
+  text-align: center;
+  font-weight: bold;
+}
+
+#homeImg {
+  width: 50%;
+  height: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#homeImg:hover {
+  -webkit-transform: rotateZ(-10deg);
+  -ms-transform: rotateZ(-10deg);
+  transform: rotateZ(-10deg);
+  transition: 1s ease;
+}
+
+#homeBtn {
+  margin: 0;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#homeBtn::before {  
+  transform: scaleX(0);
+  transform-origin: bottom right;
+}
+
+#homeBtn:hover::before {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+#homeBtn::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  inset: 0 0 0 0;
+  background: rgb(217, 82, 80);
+  z-index: -1;
+  transition: transform .3s ease;
+}
+
+
 footer.page-footer {
   padding-top: 0;
   text-align: right;
+  background-color: white;
+  color: black;
 }
