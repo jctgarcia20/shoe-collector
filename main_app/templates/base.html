@@ -16,9 +16,10 @@
     <nav>
       <div class="nav-wrapper">
         <ul>
-          <li><a href="{% url 'home' %}" class="logo">&nbsp;&nbsp;ShoeCollector</a></li>
+          <li><a href="{% url 'home' %}" class="brand-logo center black-text" id="logo">&nbsp;&nbsp;ShoeCollector</a></li>
         </ul>
-        <ul class="right">
+        <br>
+        <ul class="brand-logo center">
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
             <li><a href="{% url 'occasions_create' %}">Add an Occasion</a></li>

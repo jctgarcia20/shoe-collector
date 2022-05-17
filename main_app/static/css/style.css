@@ -8,9 +8,14 @@ main {
   flex: 1 0 auto;
 }
 
-.logo{
-  font-size: 32px;
-  text-align: center !important;
+#logo{
+  font-size: 40px;
+  text-align: center;
+}
+
+nav {
+  height: 90px;
+  line-height: 45px;
 }
 
 .nav-wrapper {
@@ -19,6 +24,7 @@ main {
 
 nav ul a {
   color: black;
+  font-size: 2vmin;
 }
 
 #slogan {
@@ -43,6 +49,7 @@ nav ul a {
 
 #homeBtn {
   margin: 0;
+  margin-top: 5vmin;
   position: absolute;
   top: 80%;
   left: 50%;
