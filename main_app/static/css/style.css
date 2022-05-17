@@ -23,8 +23,14 @@ nav {
 }
 
 nav ul a {
+  display: flex; 
+  align-items: center; 
   color: black;
-  font-size: 2vmin;
+  font-size: 1.05vmin;
+  margin: 0.25vmin;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 #slogan {
