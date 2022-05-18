@@ -130,3 +130,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/shoes/'
 # Specify where logouts should redirect to
 LOGOUT_REDIRECT_URL = '/shoes/'
+
+import django_on_heroku
+django_on_heroku.settings(locals())
