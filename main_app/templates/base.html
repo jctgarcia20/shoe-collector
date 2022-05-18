@@ -26,7 +26,8 @@
             <li><a href="{% url 'occasions_index' %}">View All Occasions</a></li>
             <li><a href="{% url 'shoes_create' %}">Add a Shoe</a></li>
             <li><a href="{% url 'index' %}">View All My Shoes</a></li>
-          {% else %}
+            <li><a href="{% url 'logout' %}">Log Out</a></li>
+            {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>
             <li><a href="{% url 'login' %}">Log In</a></li>
           {% endif %}
