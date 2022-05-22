@@ -16,7 +16,7 @@
 <br>
 <h1>Description</h1>
 <p>Collect. Organize. Plan ahead.
-<p>With ShoeCollector, be able to add and track all the shoes in your collection. Have control in how often you wear a specific shoe, with the ability to plan out when and where you flash your style!
+<p>With ShoeCollector, be able to add and track all the shoes in your collection. Have control over how often you wear a specific shoe, with the ability to plan out when and where you flash your style!
 <br>
 
 ## The Website:
