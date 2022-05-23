@@ -14,12 +14,12 @@
 </div>
 
 <br>
-<h1>Description</h1>
+<h2>Description</h2>
 <p>Collect. Organize. Plan ahead.
 <p>With ShoeCollector, be able to add and track all the shoes in your collection. Have control over how often you wear a specific shoe, with the ability to plan out when and where you flash your style!
 <br>
 
-## The Website:
+## The Website
 | Description | Screenshot |
 |------------ | ------------|
 | <h3 align="center">Home Page</h3> | <img src="https://i.imgur.com/ulmMYQp.png">
@@ -27,6 +27,7 @@
 | <h3 align="center">Add a shoe to your collection</h3> |  <img src="https://i.imgur.com/soCa1M0.png">
 | <h3 align="center">Shoe Details</h3> | <img src="https://i.imgur.com/XO1CS6j.png">
 </details>
+<br>
 
 ## Technologies Used
 ![Python](https://img.shields.io/badge/-Python-333?style=flat&logo=python)
@@ -38,6 +39,8 @@
 ![Git](https://img.shields.io/badge/-Git-333?style=flat&logo=git)
 ![Github](https://img.shields.io/badge/-GitHub-333?style=flat&logo=github)
 ![VSCode](https://img.shields.io/badge/-VS_Code-333?style=flat&logo=visualstudio)
+
+<br>
 
 ## Next Steps
 
